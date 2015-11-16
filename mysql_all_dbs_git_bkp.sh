@@ -11,7 +11,7 @@ echo "**************************************************************************
 echo "BEGIN: $NOW"
 echo "------------------------------------------------------------------------------"
 echo "CREATING FILE..."
-mysqldump -h $DB_HOST --user=$DB_USER --password="${DB_PASS}" --all-databases > mysqldump.sql
+mysqldump -h $DB_HOST --user=$DB_USER --password="${DB_PASS}" --all-databases --extended-insert=FALSE > mysqldump.sql
 head -n -1 mysqldump.sql > mysqldump-no_last_line.sql
 mv mysqldump-no_last_line.sql mysqldump.sql
 diff mysqldump.sql last_mysqldump.sql > diff.txt

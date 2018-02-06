@@ -26,19 +26,17 @@ diff mysqldump.sql last_mysqldump.sql > diff.txt
 if [ -s diff.txt ] || [ ! -e last_mysqldump.sql ]
   then
     echo "NEW FILE DIFFERENT FROM THE LAST ONE."
-    rm diff.txt
     mkdir -p $STASH_DIR
     echo "CREATED STASH DIR"
     tar zcf $FILENAME.tar.gz mysqldump.sql
     echo "FILE CREATED $FILENAME.tar.gz"
     mv $FILENAME.tar.gz $STASH_DIR/
     echo "FILE $FILENAME MOVED TO $STASH_DIR"
-    mv mysqldump.sql last_mysqldump.sql
   else
     echo "NO CHANGES."
-    rm diff.txt
-    mv mysqldump.sql last_mysqldump.sql
 fi
+mv mysqldump.sql last_mysqldump.sql
+rm -rf diff.txt
 echo "------------------------------------------------------------------------------"
 END=$(date +"%Y-%m-%d_%H-%M-%S_%z")
 echo "BEGIN: $NOW"

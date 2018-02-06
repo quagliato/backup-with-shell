@@ -1,5 +1,4 @@
 #!/bin/bash
-clear;
 NOW=$(date +"%Y-%m-%d_%H-%M-%S_%z")
 STASH_DIR=$1
 UPLOADED_DIR=$2

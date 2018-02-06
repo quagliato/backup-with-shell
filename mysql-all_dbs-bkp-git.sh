@@ -1,3 +1,4 @@
+#!/bin/bash
 NOW=$(date +"%Y-%m-%d_%H-%M-%S_%z")
 Y=$(date +"%Y")
 M=$(date +"%m")

@@ -3,7 +3,8 @@
 This repository have some examples of shell scripts that create compressed
 backups of directories, MySQL and MongoDB databases.
 
-It also contains scripts to send this backup files to AWS S3.
+It also contains scripts to send this backup files to AWS S3 and Digital Ocean
+Spaces.
 
 These are the scripts:
 
@@ -15,6 +16,7 @@ These are the scripts:
 * `mysql-all_dbs-bkp-git.sh`: backup from MySQL databases and stores it in a 
   git repo
 * `send_s3.sh`: send the files to an AWS S3 bucket
+* `send_do_spaces.sh`: send the files to a Digital Ocean Space
 
 All scripts receive almost all settings by parameters. I'll list some examples.
 
@@ -103,8 +105,22 @@ All scripts receive almost all settings by parameters. I'll list some examples.
 * UPLOADED\_DIR: the directory where the files will be moved after upload
 * AWS\_BUCKET: the AWS S3 bucket name
 * AWS\_REGION: the AWS Region where the AWS S3 Bucket is located
-* AWS\_S3\_KEY: the AWS S3 Key
-* AWS\_S3\_SECRET: the AWS S3 Secret
+* S3KEY: the AWS S3 Key
+* S3SECRET: the AWS S3 Secret
+
+### send\_do\_spaces.sh
+
+```
+./send_do_spaces.sh <STASH_DIR> <UPLOADED_DIR> <SPACE_NAME> <DO_REGION> <AUTH_KEY> <AUTH_SECRET>
+```
+
+* STASH\_DIR: the directory where the stash files are
+* UPLOADED\_DIR: the directory where the files will be moved after upload
+* SPACE\_NAME: the Digital Ocean Space name
+* DO\_REGION: the Digital Ocean region where the Space is located
+* AUTH\_KEY: the auth key
+* AUTH\_SECRET: the auth secret
+
 
 ## Get in touch
 
